@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenU1JDPC.Vistas.examenVista">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Beige">
+            <Label  FontAttributes="Bold"  TextColor="Tomato" Text="Calcular IMC y FCN" FontSize="24" HorizontalTextAlignment="Center"></Label>
+            <Label Margin="0,40,0,0" FontAttributes="Italic" FontSize="18" 
+                Text="Selecciona la opcion a Calcular"></Label>
+            <Grid>
+                <RadioButton Grid.Column="0" Grid.Row="0"
+                 Content="FCN" IsChecked="False"></RadioButton>
+                <RadioButton Grid.Column="1" Grid.Row="0"
+ Content="IMC" IsChecked="False"></RadioButton>
+                <Label FontAttributes="Italic" FontSize="18"  Text="Ingresa tus datos"
+                      Grid.Row="3" Grid.ColumnSpan="2">
+                    
+                    
+                </Label>
+                <Entry Placeholder="Peso" Grid.Column="0"
+                       Grid.Row="4"></Entry>
+                <Entry Placeholder="Altura" Grid.Column="1"
+       Grid.Row="4"></Entry>
+                <Button TextColor="AliceBlue" Grid.ColumnSpan="2" Grid.Row="8" Text="CALCULAR"></Button>
+                <Label HorizontalTextAlignment="Center" Text="Resultado"
+                    Grid.Row="7" Grid.ColumnSpan="2"></Label>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
