@@ -8,21 +8,25 @@
             <Label Margin="0,40,0,0" FontAttributes="Italic" FontSize="18" 
                 Text="Selecciona la opcion a Calcular"></Label>
             <Grid>
-                <RadioButton Grid.Column="0" Grid.Row="0"
-                 Content="FCN" IsChecked="False"></RadioButton>
+                <RadioButton  Grid.Column="0" Grid.Row="0"
+                 Content="FCN"  IsChecked="{Binding FCN}"></RadioButton>
                 <RadioButton Grid.Column="1" Grid.Row="0"
- Content="IMC" IsChecked="False"></RadioButton>
+ Content="IMC" IsChecked="{Binding Imc}"></RadioButton>
                 <Label FontAttributes="Italic" FontSize="18"  Text="Ingresa tus datos"
                       Grid.Row="3" Grid.ColumnSpan="2">
                     
                     
                 </Label>
                 <Entry Placeholder="Peso" Grid.Column="0"
-                       Grid.Row="4"></Entry>
+                       Grid.Row="4" Text="{Binding Peso}"  ></Entry>
                 <Entry Placeholder="Altura" Grid.Column="1"
-       Grid.Row="4"></Entry>
-                <Button TextColor="AliceBlue" Grid.ColumnSpan="2" Grid.Row="8" Text="CALCULAR"></Button>
-                <Label HorizontalTextAlignment="Center" Text="Resultado"
+       Grid.Row="4" Text="{Binding Altura}" ></Entry>
+                <Entry Placeholder="Latidos por 15s" Grid.Column="0"
+Grid.Row="6" Text="{Binding Latidos}" IsVisible="{Binding FCVisible}"></Entry>
+
+                <Button TextColor="AliceBlue" Grid.ColumnSpan="2" Grid.Row="8" Text="CALCULAR"
+                       Command="{Binding Calcularcomand}"  ></Button>
+                <Label HorizontalTextAlignment="Center" TextColor="Black" Text="{Binding Resultado}"
                     Grid.Row="7" Grid.ColumnSpan="2"></Label>
             </Grid>
             

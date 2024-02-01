@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExamenU1JDPC.VistaModelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ExamenU1JDPC.Vistas
         public examenVista()
         {
             InitializeComponent();
+            BindingContext = new VMexamen(Navigation);
         }
     }
 }
