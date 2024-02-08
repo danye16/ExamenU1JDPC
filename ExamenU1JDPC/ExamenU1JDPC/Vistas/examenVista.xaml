@@ -11,21 +11,27 @@
                 <RadioButton  Grid.Column="0" Grid.Row="0"
                  Content="FCN"  IsChecked="{Binding FCN}"></RadioButton>
                 <RadioButton Grid.Column="1" Grid.Row="0"
- Content="IMC" IsChecked="{Binding Imc}"></RadioButton>
+ Content="IMC" IsChecked="{Binding Imc}" x:Name="IMC"></RadioButton>
                 <Label FontAttributes="Italic" FontSize="18"  Text="Ingresa tus datos"
                       Grid.Row="3" Grid.ColumnSpan="2">
                     
                     
                 </Label>
                 <Entry Placeholder="Peso" Grid.Column="0"
-                       Grid.Row="4" Text="{Binding Peso}"  ></Entry>
+                       Grid.Row="4" Text="{Binding Peso}" IsVisible="{Binding Imc}" ></Entry>
                 <Entry Placeholder="Altura" Grid.Column="1"
-       Grid.Row="4" Text="{Binding Altura}" ></Entry>
+       Grid.Row="4" Text="{Binding Altura}" IsVisible="{Binding Imc}" ></Entry>
                 <Entry Placeholder="Latidos por 15s" Grid.Column="0"
-Grid.Row="6" Text="{Binding Latidos}" IsVisible="{Binding FCVisible}"></Entry>
+Grid.Row="6" Text="{Binding Latidos}" IsVisible="{Binding FCN}"></Entry>
 
                 <Button TextColor="AliceBlue" Grid.ColumnSpan="2" Grid.Row="8" Text="CALCULAR"
-                       Command="{Binding Calcularcomand}"  ></Button>
+                       Command="{Binding Calcularcomand}"  >
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference IMC}, Path=IsChecked}" Value="True">
+                            <Setter Property="BackgroundColor" Value="Aqua"></Setter>
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
                 <Label HorizontalTextAlignment="Center" TextColor="Black" Text="{Binding Resultado}"
                     Grid.Row="7" Grid.ColumnSpan="2"></Label>
             </Grid>

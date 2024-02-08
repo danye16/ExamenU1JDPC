@@ -15,10 +15,9 @@ namespace ExamenU1JDPC.VistaModelo
         string _Resultado;
         double _Peso;
         double _Altura;
-        bool Imc;
-        bool FCN;
-        bool _ImcVisible;
-        bool _FCNVisible;
+        bool _Imc;
+        bool _FCN;
+     
         double _ImcResultado;
         double _FCresultado;
         double _Latidos;
@@ -51,12 +50,12 @@ namespace ExamenU1JDPC.VistaModelo
         {
             get { return _Peso; }
             set { SetValue(ref _Peso, value); }
-        }/*
+        }
         public bool Imc
         {
             get { return _Imc; }
             set { SetValue(ref _Imc, value); }
-        }*/
+        }
         public double Altura
         {
             get { return _Altura; }
@@ -71,22 +70,13 @@ namespace ExamenU1JDPC.VistaModelo
         {
             get { return _FCresultado; }
             set { SetValue(ref _FCresultado, value); }
-        }/*
+        }
         public bool FCN
         {
             get { return _FCN; }
             set { SetValue(ref _FCN, value); }
-        }*/
-        public bool FCVisible
-        {
-            get { return _FCNVisible; }
-            set { SetValue(ref _FCNVisible, value); }
         }
-        public bool IMCVisible
-        {
-            get { return _ImcVisible; }
-            set { SetValue(ref _ImcVisible, value); }
-        }
+
         #endregion
         #region PROCESOS
         public async Task ProcesoAsyncrono()
@@ -94,17 +84,17 @@ namespace ExamenU1JDPC.VistaModelo
 
         }
 
-        public void Estados()
-        {
-            if (Imc ==true)
-            {
-                IMCVisible= true;
-            }
-            else if (FCN ==true) 
-            {
-                FCVisible= true;
-            }
-        }
+        //public void Estados()
+        //{
+        //    if (Imc ==true)
+        //    {
+        //        IMCVisible= true;
+        //    }
+        //    else if (FCN ==true) 
+        //    {
+        //        FCVisible= true;
+        //    }
+        //}
         public void ImcMetodo()
         {
             ImcResultado= Peso/(Altura*Altura);
